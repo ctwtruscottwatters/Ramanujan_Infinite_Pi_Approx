@@ -70,13 +70,13 @@ def find_sine(find_answer, pi_value):
     subtracting = False
     index = 0
     for n in x:
-        print('guess: {} index: {} n: {} index == even (hence add?): {}'.format(num, index, n, 'True' if index % 2 == 0 else 'False'))
+       # print('guess: {} index: {} n: {} index == even (hence add?): {}'.format(num, index, n, 'True' if index % 2 == 0 else 'False'))
         if index % 2 == 0:
                 num -= ((dummy_val ** n))/((math.factorial(n)))
         else:
                 num += ((dummy_val ** n))/((math.factorial(n)))
         index += 1
-    print('Final Step, subtracting {} degrees: {} = {} - {}'.format(find_answer, dummy_val - num, dummy_val, num))
+  #  print('Final Step, subtracting {} degrees: {} = {} - {}'.format(find_answer, dummy_val - num, dummy_val, num))
     num = dummy_val - num
     print('{} is the sine of {} evaluated with a Taylor polynomial, to compare: {} is the computer\'s inbuilt sine for {}'.format(num, dummy_val * 180 / pi_value, numpy.sin(dummy_val), dummy_val * 180 / pi_value))
     print('All my own work. Charles Thomas Wallace Truscott Watters')
@@ -91,4 +91,14 @@ def main():
     find_sine(float(93.125), pi_close_approx)
     
 if __name__ == "__main__": main()
+
+
+"""
+runfile('C:/Users/user/Desktop/ramanujan_pi_sine.py', wdir='C:/Users/user/Desktop')
+Ramanujan's One Step Approximation for Pi = 3.1415927300133055
+Ramanujan's Pi by Charles Truscott's computer implementation: 3.141592653589793
+Computer's inbuilt Pi: 3.141592653589793
+0.9985129789397633 is the sine of 93.125 evaluated with a Taylor polynomial, to compare: 0.9985129789397631 is the computer's inbuilt sine for 93.125
+All my own work. Charles Thomas Wallace Truscott Watters
+"""
 
