@@ -41,7 +41,7 @@ def find_pi_from_ramanujan_more_complex():
     y = 9801
     z = 0
     summation = 0
-    for k in range(0, 1000, 1):
+    for k in range(0, 5, 1):
         numerator_part_one = math.factorial(4 * k)
         numerator_part_two = 1103 + 26390 * k
         numerator_together = numerator_part_one * numerator_part_two
@@ -50,10 +50,12 @@ def find_pi_from_ramanujan_more_complex():
         denominator_together = denominator_part_one * denominator_part_two
         summation += ((numerator_together)/(denominator_together))
 #        print('numerator: {} denominator: {} summation: {}'.format(numerator_together, denominator_together, summation))
+        print('Summation is: {}'.format(summation))
     z = (x / y) * summation
+    print('The sum after multiplication with the coefficient is: {}'.format(z))
 #    z = (x / y) * z
     z = numpy.reciprocal(z)
-#    print(z)
+    print('The reciprocal of the summation after multiplying by the coefficient is: {} (Pi)'.format(z))
     # Authored by Charles Thomas Wallace Truscott Watters
     return z
 
@@ -64,6 +66,7 @@ def find_sine(find_answer, pi_value):
             continue
         else:
                 x.append(n)
+    print('You input {} to find the sine for ... \n using Ramanujan\'s approximation for Pi at {}'.format(find_answer, pi_value))
     dummy_val = float(find_answer) * pi_value / 180
     num = dummy_val
     adding = False
@@ -94,11 +97,29 @@ if __name__ == "__main__": main()
 
 
 """
+
 runfile('C:/Users/user/Desktop/ramanujan_pi_sine.py', wdir='C:/Users/user/Desktop')
+Summation is: 1103.0
+Summation is: 1103.0000268319743
+Summation is: 1103.0000268319745
+Summation is: 1103.0000268319745
+Summation is: 1103.0000268319745
+The sum after multiplication with the coefficient is: 0.3183098861837907
+The reciprocal of the summation after multiplying by the coefficient is: 3.141592653589793 (Pi)
 Ramanujan's One Step Approximation for Pi = 3.1415927300133055
+Summation is: 1103.0
+Summation is: 1103.0000268319743
+Summation is: 1103.0000268319745
+Summation is: 1103.0000268319745
+Summation is: 1103.0000268319745
+The sum after multiplication with the coefficient is: 0.3183098861837907
+The reciprocal of the summation after multiplying by the coefficient is: 3.141592653589793 (Pi)
 Ramanujan's Pi by Charles Truscott's computer implementation: 3.141592653589793
 Computer's inbuilt Pi: 3.141592653589793
+You input 93.125 to find the sine for ... 
+ using Ramanujan's approximation for Pi at 3.141592653589793
 0.9985129789397633 is the sine of 93.125 evaluated with a Taylor polynomial, to compare: 0.9985129789397631 is the computer's inbuilt sine for 93.125
 All my own work. Charles Thomas Wallace Truscott Watters
+
 """
 
